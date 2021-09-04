@@ -7,8 +7,6 @@ browser.webNavigation.onCommitted.addListener(({ tabId, frameId, url }) => {
   if (frameId !== 0)
     return
 
-  if (url.startsWith('chrome://') || url.startsWith('chrome-extension://') || url.startsWith('devtools://'))
-    return
 
   // inject the latest scripts
   browser.tabs.executeScript(tabId, {
